@@ -7,6 +7,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AuthMiddleware } from './auth-middleware/auth-middleware.middleware';
 import { JwtModule } from '@nestjs/jwt';
+import { MessagesModule } from './messages/messages.module';
+import { ChatsModule } from './chats/chats.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { JwtModule } from '@nestjs/jwt';
     }),
     UsersModule,
     AuthModule,
+    MessagesModule,
+    ChatsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
